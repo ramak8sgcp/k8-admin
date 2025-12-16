@@ -1,25 +1,45 @@
-
 apiVersion: v1
 data:
   mapRoles: |
-    - groups:
+    - rolearn: arn:aws:iam::484907497033:role/eksctl-expense-1-nodegroup-expense-NodeInstanceRole-kx2Z94THB9Dk
+      groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::484907497033:role/eksctl-expense-1-nodegroup-expense-NodeInstanceRole-Uw9YJbwcpLfn
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     - groups:
       - expense-trainee
       userarn: arn:aws:iam::484907497033:user/suresh
       username: suresh
-    - groups:
-      - expense-admin
-      userarn: arn:aws:iam::484907497033:user/ramesh
-      username: ramesh
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2025-12-15T14:44:14Z"
+  creationTimestamp: "2025-12-16T12:51:56Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "6392"
-  uid: 106b41fe-b6e8-422c-8f59-5c051a644e7a
+  uid: 78aa0358-e4e2-4deb-9843-7a8716e5c6be
+
+
+# apiVersion: v1
+# data:
+#   mapRoles: |
+#     - groups:
+#       - system:bootstrappers
+#       - system:nodes
+#       rolearn: arn:aws:iam::484907497033:role/eksctl-expense-1-nodegroup-expense-NodeInstanceRole-Uw9YJbwcpLfn
+#       username: system:node:{{EC2PrivateDNSName}}
+#   mapUsers: |
+#     - groups:
+#       - expense-trainee
+#       userarn: arn:aws:iam::484907497033:user/suresh
+#       username: suresh
+#     - groups:
+#       - expense-admin
+#       userarn: arn:aws:iam::484907497033:user/ramesh
+#       username: ramesh
+# kind: ConfigMap
+# metadata:
+#   creationTimestamp: "2025-12-15T14:44:14Z"
+#   name: aws-auth
+#   namespace: kube-system
+#   resourceVersion: "6392"
+#   uid: 106b41fe-b6e8-422c-8f59-5c051a644e7a
